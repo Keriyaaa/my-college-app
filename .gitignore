@@ -73,3 +73,76 @@ yarn-error.log
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# React Native
+*.orig
+.build/
+*.xcconfig
+*.moved-aside
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+**/*.xcworkspace
+!default.xcworkspace
+xcuserdata
+**/xcuserdata
+*.xcscmblueprint
+**/.DS_Store
+*.tmproj
+*.project
+*.classpath
+**/.settings/
+*.swp
+*.swo
+*~
+
+# OSX
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Android
+*.keystore
+*.jks
+*.hprof
+.cxx/
+local.properties
+*.apk
+*.aar
+*.ap_
+*.aab
+output.json
+build/
+.gradle/
+**/build/
+captures/
+.expo/
+.expo-shared/
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.lock-wscript
+
+# BUCK
+buck-out/
+\.buckd/
+*.keystore
+!debug.keystore
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+fastlane/readme.md
+
+# Coverage
+coverage/
+.nyc_output
+
+# Env
+.env
