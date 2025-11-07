@@ -11,23 +11,33 @@ import {
 export default function DepartmentScreen({ navigation }: any) {
   // Массив отделений - замени пути на свои картинки
   const departments = [
-    { id: 1, name: 'Отделение 1', image: require('../assets/images/digital.png') },
-    { id: 2, name: 'Отделение 2', image: require('../assets/images/datahub.png') },
-    { id: 3, name: 'Отделение 3', image: require('../assets/images/kiber.png') },
-    { id: 4, name: 'Отделение 4', image: require('../assets/images/mossovet.png') },
-    { id: 5, name: 'Отделение 5', image: require('../assets/images/tehno.png') },
-    { id: 6, name: 'Отделение 6', image: require('../assets/images/avto.png') },
+    { id: 1, name: 'Диджитал', image: require('../assets/images/digital.png') },
+    { id: 2, name: 'ДатаХаб', image: require('../assets/images/datahub.png') },
+    { id: 3, name: 'Кибер', image: require('../assets/images/kiber.png') },
+    { id: 4, name: 'Моссовет', image: require('../assets/images/mossovet.png') },
+    { id: 5, name: 'Техно', image: require('../assets/images/tehno.png') },
+    { id: 6, name: 'Авто', image: require('../assets/images/avto.png') },
   ];
 
   const handleDepartmentPress = (departmentId: number) => {
-    // Здесь будет логика выбора отделения
-    console.log('Выбрано отделение:', departmentId);
-    // navigation.navigate('NextScreen');
+  if (departmentId === 1) {
+    navigation.navigate('DigitalLoading');
+  } else if (departmentId === 2) {
+    navigation.navigate('DataHubLoading');
+  } else if (departmentId === 3) {
+    navigation.navigate('CyberLoading');
+  } else if (departmentId === 4) {
+    navigation.navigate('MossovetLoading');
+  } else if (departmentId === 5) {
+    navigation.navigate('TechnoLoading');
+  } else if (departmentId === 6) {
+    navigation.navigate('AutoLoading');
+  }
   };
 
-  const handleAccountPress = () => {
-    navigation.navigate('Account');
-  };
+const handleAccountPress = () => {
+  navigation.navigate('Profile');
+};
 
   return (
     <View style={styles.container}>
@@ -90,8 +100,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   accountIcon: {
-    width: 24,
-    height: 24,
+    width: 43,
+    height: 43,
   },
   title: {
     fontSize: 24,
@@ -121,7 +131,7 @@ const styles = StyleSheet.create({
     borderColor: '#EEE',
   },
   departmentImage: {
-    width: '80%',
-    height: '80%',
+    width: '85%',
+    height: '85%',
   },
 });
