@@ -11,12 +11,15 @@ import {
   Platform,
   ScrollView,
 } from 'react-native';
+import { useUser } from '../context/UserContext'; // Добавь этот импорт
 
 export default function LoginScreen({ navigation }: any) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
+  
+  const { setUserEmail, setUserName } = useUser(); // Добавь эту строку
 
   const validateEmail = (text: string) => {
     setEmail(text);
@@ -57,15 +60,21 @@ export default function LoginScreen({ navigation }: any) {
     return true;
   };
 
-const handleLogin = () => {
-  const isEmailValid = validateEmail(email);
-  const isPasswordValid = validatePassword(password);
-  
-  if (isEmailValid && isPasswordValid) {
-    // Переход на экран выбора отделения
-    navigation.replace('Department');
-  }
-};
+  const handleLogin = () => {
+    const isEmailValid = validateEmail(email);
+    const isPasswordValid = validatePassword(password);
+    
+    if (isEmailValid && isPasswordValid) {
+      // Сохраняем email пользователя
+      setUserEmail(email);
+      // Извлекаем имя из email (часть до @)
+      const nameFromEmail = email.split('@')[0];
+      setUserName(nameFromEmail);
+      
+      // Переход на экран выбора отделения
+      navigation.replace('Department');
+    }
+  };
 
   return (
     <KeyboardAvoidingView 

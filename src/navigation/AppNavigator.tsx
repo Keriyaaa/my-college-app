@@ -18,6 +18,15 @@ import AutoLoadingScreen from '../screens/AutoLoadingScreen';
 import AutoMainScreen from '../screens/AutoMainScreen';
 import HomeScreen from '../screens/HomeScreen';
 import ProfileScreen from '../screens/ProfileScreen';
+import ThesisSupervisorsScreen from '../screens/ThesisSupervisorsScreen';
+import PartnersScreen from '../screens/PartnersScreen';
+import CharterScreen from '../screens/CharterScreen';
+import DataHubThesisSupervisorsScreen from '../screens/DataHubThesisSupervisorsScreen';
+import DataHubPartnersScreen from '../screens/DataHubPartnersScreen';
+import DataHubCharterScreen from '../screens/DataHubCharterScreen';
+import CyberThesisSupervisorsScreen from '../screens/CyberThesisSupervisorsScreen';
+import CyberPartnersScreen from '../screens/CyberPartnersScreen';
+import CyberCharterScreen from '../screens/CyberCharterScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -44,6 +53,15 @@ export default function AppNavigator() {
         <Stack.Screen name="AutoLoading" component={AutoLoadingScreen} />
         <Stack.Screen name="AutoMain" component={AutoMainScreen} />
         <Stack.Screen name="Profile" component={ProfileScreen} />
+        <Stack.Screen name="ThesisSupervisors" component={ThesisSupervisorsScreen} />
+        <Stack.Screen name="Partners" component={PartnersScreen} />
+        <Stack.Screen name="Charter" component={CharterScreen} />
+        <Stack.Screen name="DataHubThesisSupervisors" component={DataHubThesisSupervisorsScreen} />
+<Stack.Screen name="DataHubPartners" component={DataHubPartnersScreen} />
+<Stack.Screen name="DataHubCharter" component={DataHubCharterScreen} />
+<Stack.Screen name="CyberThesisSupervisors" component={CyberThesisSupervisorsScreen} />
+<Stack.Screen name="CyberPartners" component={CyberPartnersScreen} />
+<Stack.Screen name="CyberCharter" component={CyberCharterScreen} />
         <Stack.Screen 
           name="Home" 
           component={HomeScreen}
