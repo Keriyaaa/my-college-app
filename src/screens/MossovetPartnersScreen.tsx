@@ -19,7 +19,7 @@ interface Partner {
   email?: string;
 }
 
-export default function CyberPartnersScreen({ navigation }: any) {
+export default function MossovetPartnersScreen({ navigation }: any) {
   const partners: Partner[] = [
     {
       id: '1',
@@ -305,7 +305,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingTop: 30,
     paddingBottom: 12,
-    backgroundColor: '#10B981',
+    backgroundColor: '#8B0000',
     borderBottomWidth: 1,
     borderBottomColor: '#e9ecef',
   },
@@ -314,7 +314,7 @@ const styles = StyleSheet.create({
   },
   backButtonText: {
     fontSize: 18,
-    color: 'white', // Зеленый цвет
+    color: 'white', // Красный цвет
     fontWeight: '500',
   },
   title: {
@@ -346,7 +346,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   categoryButtonActive: {
-    backgroundColor: '#10B981', // Зеленый цвет
+    backgroundColor: '#DC2626', // Красный цвет
   },
   categoryButtonText: {
     fontSize: 12,
@@ -405,7 +405,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
     paddingVertical: 4,
     borderRadius: 12,
-    backgroundColor: '#10B981', // Зеленый цвет
+    backgroundColor: '#DC2626', // Красный цвет
   },
   categoryText: {
     fontSize: 12,

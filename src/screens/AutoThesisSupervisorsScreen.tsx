@@ -31,7 +31,7 @@ interface StudentApplication {
   timestamp: string;
 }
 
-export default function CyberThesisSupervisorsScreen({ navigation }: any) {
+export default function AutoThesisSupervisorsScreen({ navigation }: any) {
   const { userEmail, userName } = useUser();
   const [supervisors, setSupervisors] = useState<Supervisor[]>([]);
   const [applications, setApplications] = useState<StudentApplication[]>([]);
@@ -44,89 +44,89 @@ export default function CyberThesisSupervisorsScreen({ navigation }: any) {
 
   const loadData = async () => {
     try {
-      const savedSupervisors = await AsyncStorage.getItem('cyber_thesis_supervisors');
+      const savedSupervisors = await AsyncStorage.getItem('auto_thesis_supervisors');
       if (savedSupervisors) {
         setSupervisors(JSON.parse(savedSupervisors));
       } else {
         const initialSupervisors: Supervisor[] = [
           {
             id: '1',
-            name: 'Орлов С.В.',
-            department: 'Кибербезопасность',
-            maxStudents: 4,
-            currentStudents: ['alex@edu.kait20.ru', 'maria@edu.kait20.ru'],
+            name: 'Иванов А.В.',
+            department: 'Автомобильные двигатели',
+            maxStudents: 5,
+            currentStudents: ['student1@edu.kait20.ru', 'student2@edu.kait20.ru'],
             isAvailable: true,
-            specialization: 'Network Security, Penetration Testing'
+            specialization: 'ДВС, Турбины, Электронные системы управления'
           },
           {
             id: '2',
-            name: 'Жукова Е.А.',
-            department: 'Криптография',
-            maxStudents: 4,
-            currentStudents: ['dmitry@edu.kait20.ru'],
+            name: 'Петрова Е.С.',
+            department: 'Трансмиссия и ходовая часть',
+            maxStudents: 5,
+            currentStudents: ['student3@edu.kait20.ru'],
             isAvailable: true,
-            specialization: 'Cryptography, Blockchain, SSL/TLS'
+            specialization: 'АКПП, МКПП, Подвеска, Рулевое управление'
           },
           {
             id: '3',
-            name: 'Громов П.И.',
-            department: 'Digital Forensics',
+            name: 'Сидоров М.К.',
+            department: 'Автоэлектрика и электроника',
             maxStudents: 4,
-            currentStudents: ['olga@edu.kait20.ru', 'sergey@edu.kait20.ru'],
+            currentStudents: ['student4@edu.kait20.ru', 'student5@edu.kait20.ru', 'student6@edu.kait20.ru'],
             isAvailable: true,
-            specialization: 'Digital Forensics, Incident Response'
+            specialization: 'Электронные системы, Автопилот, Бортовые компьютеры'
           },
           {
             id: '4',
-            name: 'Белова Т.К.',
-            department: 'Security Analysis',
+            name: 'Кузнецова Т.П.',
+            department: 'Кузовной ремонт и покраска',
             maxStudents: 4,
-            currentStudents: ['artem@edu.kait20.ru', 'ekaterina@edu.kait20.ru', 'vladimir@edu.kait20.ru', 'elena@edu.kait20.ru'],
+            currentStudents: ['student7@edu.kait20.ru', 'student8@edu.kait20.ru', 'student9@edu.kait20.ru', 'student10@edu.kait20.ru'],
             isAvailable: false,
-            specialization: 'Vulnerability Assessment, Risk Management'
+            specialization: 'Аргонная сварка, Полировка, Локальный ремонт'
           },
           {
             id: '5',
-            name: 'Комаров А.Н.',
-            department: 'Ethical Hacking',
-            maxStudents: 4,
-            currentStudents: ['andrey@edu.kait20.ru'],
+            name: 'Морозов В.И.',
+            department: 'Диагностика и ТО',
+            maxStudents: 5,
+            currentStudents: ['student11@edu.kait20.ru'],
             isAvailable: true,
-            specialization: 'Ethical Hacking, Red Teaming'
+            specialization: 'Компьютерная диагностика, Профилактика, Сервис'
           },
           {
             id: '6',
-            name: 'Павлова Л.С.',
-            department: 'Security Operations',
+            name: 'Васильева О.Л.',
+            department: 'Гибридные и электромобили',
             maxStudents: 4,
-            currentStudents: ['kirill@edu.kait20.ru', 'tatyana@edu.kait20.ru'],
+            currentStudents: ['student12@edu.kait20.ru', 'student13@edu.kait20.ru'],
             isAvailable: true,
-            specialization: 'SIEM, SOC, Threat Intelligence'
+            specialization: 'Батареи, Электродвигатели, Системы зарядки'
           },
           {
             id: '7',
-            name: 'Тихонов М.В.',
-            department: 'Cloud Security',
+            name: 'Николаев Д.А.',
+            department: 'Автосервис и менеджмент',
             maxStudents: 4,
-            currentStudents: ['irina@edu.kait20.ru', 'pavel@edu.kait20.ru'],
+            currentStudents: ['student14@edu.kait20.ru', 'student15@edu.kait20.ru'],
             isAvailable: true,
-            specialization: 'Cloud Security, AWS Security, Azure Security'
+            specialization: 'Управление СТО, Логистика запчастей, Клиентский сервис'
           },
           {
             id: '8',
-            name: 'Фролова О.П.',
-            department: 'Application Security',
-            maxStudents: 4,
-            currentStudents: ['maxim@edu.kait20.ru'],
+            name: 'Андреева С.М.',
+            department: 'Автомобильный дизайн',
+            maxStudents: 3,
+            currentStudents: ['student16@edu.kait20.ru'],
             isAvailable: true,
-            specialization: 'AppSec, SAST/DAST, Secure SDLC'
+            specialization: 'Эргономика, Аэродинамика, 3D-моделирование'
           },
         ];
         setSupervisors(initialSupervisors);
-        await AsyncStorage.setItem('cyber_thesis_supervisors', JSON.stringify(initialSupervisors));
+        await AsyncStorage.setItem('auto_thesis_supervisors', JSON.stringify(initialSupervisors));
       }
 
-      const savedApplications = await AsyncStorage.getItem('cyber_thesis_applications');
+      const savedApplications = await AsyncStorage.getItem('auto_thesis_applications');
       if (savedApplications) {
         setApplications(JSON.parse(savedApplications));
       }
@@ -137,7 +137,7 @@ export default function CyberThesisSupervisorsScreen({ navigation }: any) {
 
   const saveApplications = async (updatedApplications: StudentApplication[]) => {
     try {
-      await AsyncStorage.setItem('cyber_thesis_applications', JSON.stringify(updatedApplications));
+      await AsyncStorage.setItem('auto_thesis_applications', JSON.stringify(updatedApplications));
     } catch (error) {
       console.error('Error saving applications:', error);
     }
@@ -212,9 +212,9 @@ export default function CyberThesisSupervisorsScreen({ navigation }: any) {
 
   const getStatusColor = (status?: string) => {
     switch (status) {
-      case 'pending': return '#10B981';
-      case 'approved': return '#10B981';
-      case 'rejected': return '#EF4444';
+      case 'pending': return '#F97316'; // Оранжевый
+      case 'approved': return '#F97316'; // Оранжевый
+      case 'rejected': return '#6B7280';
       default: return '#6B7280';
     }
   };
@@ -238,7 +238,7 @@ export default function CyberThesisSupervisorsScreen({ navigation }: any) {
           <View style={styles.statusBadge}>
             <Text style={[
               styles.statusText,
-              { color: item.isAvailable ? '#10B981' : '#EF4444' }
+              { color: item.isAvailable ? '#F97316' : '#6B7280' } // Оранжевый
             ]}>
               {item.isAvailable ? 'Свободен' : 'Занят'}
             </Text>
@@ -284,6 +284,7 @@ export default function CyberThesisSupervisorsScreen({ navigation }: any) {
           <Text style={styles.backButtonText}>Назад</Text>
         </TouchableOpacity>
         <Text style={styles.title}>Выбор руководителя диплома</Text>
+        <View style={{ width: 20 }} />
       </View>
 
       <View style={styles.studentInfo}>
@@ -355,27 +356,27 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'space-between',
     paddingHorizontal: 16,
     paddingTop: 30,
-    paddingBottom: 16,
-    backgroundColor: '#10B981',
+    paddingBottom: 12,
+    backgroundColor: '#F97316',
     borderBottomWidth: 1,
     borderBottomColor: '#e9ecef',
   },
   backButton: {
-    padding: 8,
-    marginRight: 16,
+    padding: 4,
   },
   backButtonText: {
-    fontSize: 16,
-    color: 'white', // Зеленый цвет
+    fontSize: 18,
+    color: 'white', // Оранжевый цвет
     fontWeight: '500',
   },
   title: {
     fontSize: 20,
     fontWeight: 'bold',
     color: '#333',
-    flex: 1,
+    textAlign: 'center',
   },
   studentInfo: {
     backgroundColor: 'white',
@@ -433,7 +434,7 @@ const styles = StyleSheet.create({
   },
   supervisorDepartment: {
     fontSize: 14,
-    color: '#10B981', // Зеленый цвет
+    color: '#F97316', // Оранжевый цвет
     fontWeight: '600',
     marginBottom: 4,
   },
@@ -453,7 +454,7 @@ const styles = StyleSheet.create({
   },
   freeSlotsText: {
     fontSize: 12,
-    color: '#10B981',
+    color: '#F97316', // Оранжевый цвет
     fontWeight: '600',
   },
   applicationStatus: {
@@ -469,7 +470,7 @@ const styles = StyleSheet.create({
   },
   unavailableText: {
     fontSize: 12,
-    color: '#EF4444',
+    color: '#6B7280',
     fontStyle: 'italic',
     marginTop: 4,
   },
@@ -503,7 +504,7 @@ const styles = StyleSheet.create({
   supervisorNameModal: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#10B981', // Зеленый цвет
+    color: '#F97316', // Оранжевый цвет
     textAlign: 'center',
     marginBottom: 8,
   },
@@ -529,7 +530,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 12,
     borderRadius: 8,
-    backgroundColor: '#10B981', // Зеленый цвет
+    backgroundColor: '#F97316', // Оранжевый цвет
     marginLeft: 8,
     alignItems: 'center',
   },

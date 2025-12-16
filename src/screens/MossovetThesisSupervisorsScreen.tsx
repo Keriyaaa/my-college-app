@@ -31,7 +31,7 @@ interface StudentApplication {
   timestamp: string;
 }
 
-export default function CyberThesisSupervisorsScreen({ navigation }: any) {
+export default function MossovetThesisSupervisorsScreen({ navigation }: any) {
   const { userEmail, userName } = useUser();
   const [supervisors, setSupervisors] = useState<Supervisor[]>([]);
   const [applications, setApplications] = useState<StudentApplication[]>([]);
@@ -44,89 +44,89 @@ export default function CyberThesisSupervisorsScreen({ navigation }: any) {
 
   const loadData = async () => {
     try {
-      const savedSupervisors = await AsyncStorage.getItem('cyber_thesis_supervisors');
+      const savedSupervisors = await AsyncStorage.getItem('mossovet_thesis_supervisors');
       if (savedSupervisors) {
         setSupervisors(JSON.parse(savedSupervisors));
       } else {
         const initialSupervisors: Supervisor[] = [
           {
             id: '1',
-            name: 'Орлов С.В.',
-            department: 'Кибербезопасность',
+            name: 'Волкова Т.П.',
+            department: 'Муниципальное управление',
             maxStudents: 4,
             currentStudents: ['alex@edu.kait20.ru', 'maria@edu.kait20.ru'],
             isAvailable: true,
-            specialization: 'Network Security, Penetration Testing'
+            specialization: 'Городское планирование, Управление ЖКХ'
           },
           {
             id: '2',
-            name: 'Жукова Е.А.',
-            department: 'Криптография',
+            name: 'Смирнов А.В.',
+            department: 'Социальные проекты',
             maxStudents: 4,
             currentStudents: ['dmitry@edu.kait20.ru'],
             isAvailable: true,
-            specialization: 'Cryptography, Blockchain, SSL/TLS'
+            specialization: 'Социальное предпринимательство, Волонтерство'
           },
           {
             id: '3',
-            name: 'Громов П.И.',
-            department: 'Digital Forensics',
+            name: 'Кузнецова Е.И.',
+            department: 'Государственная служба',
             maxStudents: 4,
             currentStudents: ['olga@edu.kait20.ru', 'sergey@edu.kait20.ru'],
             isAvailable: true,
-            specialization: 'Digital Forensics, Incident Response'
+            specialization: 'Административное право, Государственные услуги'
           },
           {
             id: '4',
-            name: 'Белова Т.К.',
-            department: 'Security Analysis',
+            name: 'Петров И.С.',
+            department: 'Общественные инициативы',
             maxStudents: 4,
             currentStudents: ['artem@edu.kait20.ru', 'ekaterina@edu.kait20.ru', 'vladimir@edu.kait20.ru', 'elena@edu.kait20.ru'],
             isAvailable: false,
-            specialization: 'Vulnerability Assessment, Risk Management'
+            specialization: 'Гражданские инициативы, ТОС'
           },
           {
             id: '5',
-            name: 'Комаров А.Н.',
-            department: 'Ethical Hacking',
+            name: 'Захарова М.К.',
+            department: 'Экология и благоустройство',
             maxStudents: 4,
             currentStudents: ['andrey@edu.kait20.ru'],
             isAvailable: true,
-            specialization: 'Ethical Hacking, Red Teaming'
+            specialization: 'Экологические проекты, Благоустройство территорий'
           },
           {
             id: '6',
-            name: 'Павлова Л.С.',
-            department: 'Security Operations',
+            name: 'Николаев В.Д.',
+            department: 'Бюджет и финансы',
             maxStudents: 4,
             currentStudents: ['kirill@edu.kait20.ru', 'tatyana@edu.kait20.ru'],
             isAvailable: true,
-            specialization: 'SIEM, SOC, Threat Intelligence'
+            specialization: 'Муниципальные финансы, Бюджетный процесс'
           },
           {
             id: '7',
-            name: 'Тихонов М.В.',
-            department: 'Cloud Security',
+            name: 'Федорова Л.А.',
+            department: 'Образование и культура',
             maxStudents: 4,
             currentStudents: ['irina@edu.kait20.ru', 'pavel@edu.kait20.ru'],
             isAvailable: true,
-            specialization: 'Cloud Security, AWS Security, Azure Security'
+            specialization: 'Культурная политика, Образовательные проекты'
           },
           {
             id: '8',
-            name: 'Фролова О.П.',
-            department: 'Application Security',
+            name: 'Алексеев С.П.',
+            department: 'Транспорт и инфраструктура',
             maxStudents: 4,
             currentStudents: ['maxim@edu.kait20.ru'],
             isAvailable: true,
-            specialization: 'AppSec, SAST/DAST, Secure SDLC'
+            specialization: 'Транспортное планирование, Городская инфраструктура'
           },
         ];
         setSupervisors(initialSupervisors);
-        await AsyncStorage.setItem('cyber_thesis_supervisors', JSON.stringify(initialSupervisors));
+        await AsyncStorage.setItem('mossovet_thesis_supervisors', JSON.stringify(initialSupervisors));
       }
 
-      const savedApplications = await AsyncStorage.getItem('cyber_thesis_applications');
+      const savedApplications = await AsyncStorage.getItem('mossovet_thesis_applications');
       if (savedApplications) {
         setApplications(JSON.parse(savedApplications));
       }
@@ -137,7 +137,7 @@ export default function CyberThesisSupervisorsScreen({ navigation }: any) {
 
   const saveApplications = async (updatedApplications: StudentApplication[]) => {
     try {
-      await AsyncStorage.setItem('cyber_thesis_applications', JSON.stringify(updatedApplications));
+      await AsyncStorage.setItem('mossovet_thesis_applications', JSON.stringify(updatedApplications));
     } catch (error) {
       console.error('Error saving applications:', error);
     }
@@ -212,9 +212,9 @@ export default function CyberThesisSupervisorsScreen({ navigation }: any) {
 
   const getStatusColor = (status?: string) => {
     switch (status) {
-      case 'pending': return '#10B981';
-      case 'approved': return '#10B981';
-      case 'rejected': return '#EF4444';
+      case 'pending': return '#DC2626';
+      case 'approved': return '#DC2626';
+      case 'rejected': return '#6B7280';
       default: return '#6B7280';
     }
   };
@@ -238,7 +238,7 @@ export default function CyberThesisSupervisorsScreen({ navigation }: any) {
           <View style={styles.statusBadge}>
             <Text style={[
               styles.statusText,
-              { color: item.isAvailable ? '#10B981' : '#EF4444' }
+              { color: item.isAvailable ? '#DC2626' : '#6B7280' }
             ]}>
               {item.isAvailable ? 'Свободен' : 'Занят'}
             </Text>
@@ -281,9 +281,10 @@ export default function CyberThesisSupervisorsScreen({ navigation }: any) {
           style={styles.backButton}
           onPress={() => navigation.goBack()}
         >
-          <Text style={styles.backButtonText}>Назад</Text>
+          <Text style={styles.backButtonText}>Назад  </Text>
         </TouchableOpacity>
         <Text style={styles.title}>Выбор руководителя диплома</Text>
+        <View style={{ width: 20 }} />
       </View>
 
       <View style={styles.studentInfo}>
@@ -355,27 +356,27 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'space-between',
     paddingHorizontal: 16,
     paddingTop: 30,
-    paddingBottom: 16,
-    backgroundColor: '#10B981',
+    paddingBottom: 12,
+    backgroundColor: '#8B0000',
     borderBottomWidth: 1,
     borderBottomColor: '#e9ecef',
   },
   backButton: {
-    padding: 8,
-    marginRight: 16,
+    padding: 4,
   },
   backButtonText: {
-    fontSize: 16,
-    color: 'white', // Зеленый цвет
+    fontSize: 18,
+    color: 'white', // Красный цвет
     fontWeight: '500',
   },
   title: {
     fontSize: 20,
     fontWeight: 'bold',
     color: '#333',
-    flex: 1,
+    textAlign: 'center',
   },
   studentInfo: {
     backgroundColor: 'white',
@@ -433,7 +434,7 @@ const styles = StyleSheet.create({
   },
   supervisorDepartment: {
     fontSize: 14,
-    color: '#10B981', // Зеленый цвет
+    color: '#DC2626', // Красный цвет
     fontWeight: '600',
     marginBottom: 4,
   },
@@ -453,7 +454,7 @@ const styles = StyleSheet.create({
   },
   freeSlotsText: {
     fontSize: 12,
-    color: '#10B981',
+    color: '#DC2626', // Красный цвет
     fontWeight: '600',
   },
   applicationStatus: {
@@ -469,7 +470,7 @@ const styles = StyleSheet.create({
   },
   unavailableText: {
     fontSize: 12,
-    color: '#EF4444',
+    color: '#6B7280',
     fontStyle: 'italic',
     marginTop: 4,
   },
@@ -503,7 +504,7 @@ const styles = StyleSheet.create({
   supervisorNameModal: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#10B981', // Зеленый цвет
+    color: '#DC2626', // Красный цвет
     textAlign: 'center',
     marginBottom: 8,
   },
@@ -529,7 +530,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 12,
     borderRadius: 8,
-    backgroundColor: '#10B981', // Зеленый цвет
+    backgroundColor: '#DC2626', // Красный цвет
     marginLeft: 8,
     alignItems: 'center',
   },

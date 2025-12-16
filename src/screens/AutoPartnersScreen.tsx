@@ -19,99 +19,135 @@ interface Partner {
   email?: string;
 }
 
-export default function CyberPartnersScreen({ navigation }: any) {
+export default function AutoPartnersScreen({ navigation }: any) {
   const partners: Partner[] = [
     {
       id: '1',
-      name: 'АО «НПЦ газотурбостроения «Салют»',
-      description: 'Ведущее предприятие по разработке и производству газотурбинных двигателей и энергетических установок',
-      category: 'Промышленность',
-      website: 'https://www.salut-rtc.ru',
-      phone: '+7 (495) 123-45-67',
-      email: 'info@salut-rtc.ru'
+      name: 'АВТОВАЗ',
+      description: 'Крупнейший производитель автомобилей в России и Восточной Европе',
+      category: 'Автопроизводство',
+      website: 'https://www.lada.ru',
+      phone: '+7 (800) 200-52-32',
+      email: 'info@lada.ru'
     },
     {
       id: '2',
-      name: 'Акционерное общество "НПО" Орион',
-      description: 'Научно-производственное объединение в области радиотехники и электроники',
-      category: 'Электроника',
-      website: 'https://www.npo-orion.ru',
-      phone: '+7 (495) 234-56-78',
-      email: 'contact@npo-orion.ru'
+      name: 'КАМАЗ',
+      description: 'Производитель грузовых автомобилей и дизельных двигателей',
+      category: 'Грузовой транспорт',
+      website: 'https://www.kamaz.ru',
+      phone: '+7 (843) 205-01-01',
+      email: 'office@kamaz.ru'
     },
     {
       id: '3',
-      name: 'АО "ВДНХ"',
-      description: 'Крупнейший экспозиционный, музейный и рекреационный комплекс в мире',
-      category: 'Культура и образование',
-      website: 'https://vdnh.ru',
-      phone: '+7 (495) 544-34-00',
-      email: 'info@vdnh.ru'
+      name: 'ГАЗ Групп',
+      description: 'Ведущий производитель коммерческого транспорта в России',
+      category: 'Коммерческий транспорт',
+      website: 'https://www.gazgroup.ru',
+      phone: '+7 (831) 296-30-00',
+      email: 'info@gaz.ru'
     },
     {
       id: '4',
-      name: 'АО "ГОКБ "Прожектор"',
-      description: 'Государственное опытно-конструкторское бюро в области светотехники и оптики',
-      category: 'Оптика и светотехника',
-      website: 'https://www.prozhektor.ru',
-      phone: '+7 (495) 345-67-89',
-      email: 'gokb@prozhektor.ru'
+      name: 'Bosch Автосервис',
+      description: 'Сеть официальных автосервисов с использованием оригинальных запчастей Bosch',
+      category: 'Автосервис',
+      website: 'https://www.boschcarservice.com/ru/ru/',
+      phone: '+7 (800) 200-05-04',
+      email: 'bcs.russia@bosch.com'
     },
     {
       id: '5',
-      name: 'Открытое общество "Московский завод тепловой автоматики" ОАО МЗТА',
-      description: 'Производство приборов и систем тепловой автоматики для ЖКХ и промышленности',
-      category: 'Промышленная автоматика',
-      website: 'https://www.mzta.ru',
-      phone: '+7 (495) 456-78-90',
-      email: 'sales@mzta.ru'
+      name: 'Шиномонтаж 24/7',
+      description: 'Сеть круглосуточных шиномонтажных центров',
+      category: 'Шиномонтаж',
+      website: 'https://www.shinamontag24.ru',
+      phone: '+7 (495) 123-45-67',
+      email: 'info@shinamontag24.ru'
     },
     {
       id: '6',
-      name: 'АО "НПП "Пульсар" - управляющей организации АО "ГЗ "Пульсар"',
-      description: 'Научно-производственное предприятие в области радиотехники и телекоммуникаций',
-      category: 'Радиотехника',
-      website: 'https://www.pulsar-rti.ru',
-      phone: '+7 (495) 567-89-01',
-      email: 'office@pulsar-rti.ru'
+      name: 'Autodoc',
+      description: 'Крупнейший онлайн-магазин автозапчастей в Европе',
+      category: 'Автозапчасти',
+      website: 'https://www.autodoc.ru',
+      phone: '+7 (495) 234-56-78',
+      email: 'info@autodoc.ru'
     },
     {
       id: '7',
-      name: 'ООО ПМ-Авто',
-      description: 'Сервисный центр по ремонту и обслуживанию автомобилей',
+      name: 'ООО "Автотехцентр Профи"',
+      description: 'Сервисный центр полного цикла для всех марок автомобилей',
       category: 'Автосервис',
-      phone: '+7 (495) 678-90-12',
-      email: 'pm-auto@mail.ru'
+      phone: '+7 (495) 345-67-89',
+      email: 'autoprofi@mail.ru'
     },
     {
       id: '8',
-      name: 'ООО "Автоартис"',
-      description: 'Комплекс услуг по кузовному ремонту и покраске автомобилей',
-      category: 'Автосервис',
-      phone: '+7 (495) 789-01-23',
-      email: 'autoartis@yandex.ru'
+      name: 'ООО "Автолакс"',
+      description: 'Специализированный центр кузовного ремонта и покраски',
+      category: 'Кузовной ремонт',
+      phone: '+7 (495) 456-78-90',
+      email: 'autolax@yandex.ru'
     },
     {
       id: '9',
-      name: 'ООО "Авто детали"',
-      description: 'Продажа автозапчастей и аксессуаров для всех марок автомобилей',
+      name: 'ООО "Автодеталь"',
+      description: 'Оптово-розничная продажа автозапчастей для отечественных и импортных автомобилей',
       category: 'Автозапчасти',
-      phone: '+7 (495) 890-12-34',
-      email: 'autodetails@gmail.com'
+      phone: '+7 (495) 567-89-01',
+      email: 'avtodetal@gmail.com'
     },
     {
       id: '10',
-      name: 'ООО "Гараж и К"',
-      description: 'Автосервис полного цикла с собственным магазином запчастей',
+      name: 'ООО "Гараж Моторс"',
+      description: 'Автосервис премиум-класса с диагностическим оборудованием',
       category: 'Автосервис',
-      phone: '+7 (495) 901-23-45',
-      email: 'garage-k@mail.ru'
+      phone: '+7 (495) 678-90-12',
+      email: 'garagemotors@mail.ru'
     },
     {
       id: '11',
-      name: 'Преображенский РОСП УФССП и ГБПОУ КАИТ№20',
-      description: 'Совместная образовательная программа с Федеральной службой судебных приставов',
+      name: 'Shell Автосервис',
+      description: 'Сеть автосервисов при АЗС Shell с гарантией качества',
+      category: 'Автосервис',
+      website: 'https://www.shell.ru',
+      phone: '+7 (495) 789-01-23',
+      email: 'carservice.ru@shell.com'
+    },
+    {
+      id: '12',
+      name: 'ООО "Автоэлектрика Профи"',
+      description: 'Специализированный центр по ремонту автомобильной электрики и электроники',
+      category: 'Автоэлектрика',
+      phone: '+7 (495) 890-12-34',
+      email: 'auto.electro@gmail.com'
+    },
+    {
+      id: '13',
+      name: 'Lada Центр Москва',
+      description: 'Официальный дилер и сервисный центр Lada',
+      category: 'Дилерский центр',
+      website: 'https://www.lada-moscow.ru',
+      phone: '+7 (495) 901-23-45',
+      email: 'moscow@lada-center.ru'
+    },
+    {
+      id: '14',
+      name: 'Hyundai Motor CIS',
+      description: 'Официальный представитель Hyundai в России и СНГ',
+      category: 'Автопроизводство',
+      website: 'https://www.hyundai.ru',
+      phone: '+7 (800) 200-02-00',
+      email: 'info@hyundai.ru'
+    },
+    {
+      id: '15',
+      name: 'ГИБДД Москвы',
+      description: 'Совместные программы по безопасности дорожного движения и обучению',
       category: 'Государственные органы',
+      website: 'https://гибдд.рф',
       phone: '+7 (495) 012-34-56',
       email: 'partnership@kait20.ru'
     }
@@ -119,14 +155,15 @@ export default function CyberPartnersScreen({ navigation }: any) {
 
   const categories = [
     'Все',
-    'Промышленность',
-    'Электроника', 
-    'Культура и образование',
-    'Оптика и светотехника',
-    'Промышленная автоматика',
-    'Радиотехника',
+    'Автопроизводство',
+    'Грузовой транспорт', 
+    'Коммерческий транспорт',
     'Автосервис',
+    'Шиномонтаж',
     'Автозапчасти',
+    'Кузовной ремонт',
+    'Автоэлектрика',
+    'Дилерский центр',
     'Государственные органы'
   ];
 
@@ -305,7 +342,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingTop: 30,
     paddingBottom: 12,
-    backgroundColor: '#10B981',
+    backgroundColor: '#F97316',
     borderBottomWidth: 1,
     borderBottomColor: '#e9ecef',
   },
@@ -314,7 +351,7 @@ const styles = StyleSheet.create({
   },
   backButtonText: {
     fontSize: 18,
-    color: 'white', // Зеленый цвет
+    color: 'white', // Оранжевый цвет
     fontWeight: '500',
   },
   title: {
@@ -346,7 +383,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   categoryButtonActive: {
-    backgroundColor: '#10B981', // Зеленый цвет
+    backgroundColor: '#F97316', // Оранжевый цвет
   },
   categoryButtonText: {
     fontSize: 12,
@@ -405,7 +442,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
     paddingVertical: 4,
     borderRadius: 12,
-    backgroundColor: '#10B981', // Зеленый цвет
+    backgroundColor: '#F97316', // Оранжевый цвет
   },
   categoryText: {
     fontSize: 12,

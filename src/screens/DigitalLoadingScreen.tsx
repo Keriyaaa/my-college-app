@@ -42,7 +42,7 @@ export default function DigitalLoadingScreen({ navigation }: any) {
       </View>
 
       {/* Надпись под логотипом */}
-      <Text style={styles.departmentText}>Дидижитал</Text>
+      <Text style={styles.departmentText}>Диджитал</Text>
 
       {/* Прогресс-бар цвета между оранжевым и желтым */}
       <View style={styles.progressBackground}>

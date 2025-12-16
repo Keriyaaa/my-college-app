@@ -242,12 +242,13 @@ export default function DataHubPartnersScreen({ navigation }: any) {
           style={styles.backButton}
           onPress={() => navigation.goBack()}
         >
-          <Text style={styles.backButtonText}>← Назад</Text>
+          <Text style={styles.backButtonText}>Назад</Text>
         </TouchableOpacity>
         <Text style={styles.title}>Партнеры колледжа</Text>
+        <View style={{ width: 20 }} />
       </View>
 
-      {/* Категории */}
+      {/* Компактные категории */}
       <ScrollView 
         horizontal 
         showsHorizontalScrollIndicator={false}
@@ -263,10 +264,14 @@ export default function DataHubPartnersScreen({ navigation }: any) {
             ]}
             onPress={() => setSelectedCategory(category)}
           >
-            <Text style={[
-              styles.categoryButtonText,
-              selectedCategory === category && styles.categoryButtonTextActive
-            ]}>
+            <Text 
+              style={[
+                styles.categoryButtonText,
+                selectedCategory === category && styles.categoryButtonTextActive
+              ]}
+              numberOfLines={1}
+              ellipsizeMode="tail"
+            >
               {category}
             </Text>
           </TouchableOpacity>
@@ -300,59 +305,71 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'space-between',
     paddingHorizontal: 16,
-    paddingTop: 60,
-    paddingBottom: 16,
-    backgroundColor: 'white',
+    paddingTop: 30,
+    paddingBottom: 12,
+    backgroundColor: '#8B5CF6',
     borderBottomWidth: 1,
     borderBottomColor: '#e9ecef',
   },
   backButton: {
-    padding: 8,
-    marginRight: 16,
+    padding: 4,
   },
   backButtonText: {
-    fontSize: 16,
-    color: '#8B5CF6', // Фиолетовый цвет
+    fontSize: 18,
+    color: 'white', // Фиолетовый цвет для DataHub
     fontWeight: '500',
   },
   title: {
     fontSize: 20,
     fontWeight: 'bold',
     color: '#333',
-    flex: 1,
+    textAlign: 'center',
   },
+  // Компактные категории
   categoriesContainer: {
     backgroundColor: 'white',
     borderBottomWidth: 1,
     borderBottomColor: '#e9ecef',
+    maxHeight: 50,
   },
   categoriesContent: {
-    paddingHorizontal: 16,
-    paddingVertical: 12,
+    paddingHorizontal: 12,
+    paddingVertical: 10,
+    alignItems: 'center',
+    gap: 6,
   },
   categoryButton: {
-    paddingHorizontal: 16,
+    paddingHorizontal: 14,
     paddingVertical: 8,
     borderRadius: 20,
     backgroundColor: '#f8f9fa',
-    marginRight: 8,
+    minWidth: 100,
+    maxWidth: 140,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   categoryButtonActive: {
-    backgroundColor: '#8B5CF6', // Фиолетовый цвет
+    backgroundColor: '#8B5CF6', // Фиолетовый цвет для DataHub
   },
   categoryButtonText: {
-    fontSize: 14,
+    fontSize: 12,
     color: '#666',
     fontWeight: '500',
+    textAlign: 'center',
+    lineHeight: 14,
   },
   categoryButtonTextActive: {
     color: 'white',
+    fontWeight: '600',
   },
   counter: {
     paddingHorizontal: 16,
-    paddingVertical: 12,
+    paddingVertical: 10,
     backgroundColor: 'white',
+    borderBottomWidth: 1,
+    borderBottomColor: '#e9ecef',
   },
   counterText: {
     fontSize: 14,
@@ -393,7 +410,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
     paddingVertical: 4,
     borderRadius: 12,
-    backgroundColor: '#8B5CF6', // Фиолетовый цвет
+    backgroundColor: '#8B5CF6', // Фиолетовый цвет для DataHub
   },
   categoryText: {
     fontSize: 12,

@@ -287,7 +287,7 @@ export default function DataHubThesisSupervisorsScreen({ navigation }: any) {
           style={styles.backButton}
           onPress={() => navigation.goBack()}
         >
-          <Text style={styles.backButtonText}>← Назад</Text>
+          <Text style={styles.backButtonText}>Назад</Text>
         </TouchableOpacity>
         <Text style={styles.title}>Выбор руководителя диплома</Text>
       </View>
@@ -365,9 +365,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 16,
-    paddingTop: 60,
+    paddingTop: 30,
     paddingBottom: 16,
-    backgroundColor: 'white',
+    backgroundColor: '#8B5CF6',
     borderBottomWidth: 1,
     borderBottomColor: '#e9ecef',
   },
@@ -377,7 +377,7 @@ const styles = StyleSheet.create({
   },
   backButtonText: {
     fontSize: 16,
-    color: '#8B5CF6', // Фиолетовый цвет
+    color: 'white', // Фиолетовый цвет
     fontWeight: '500',
   },
   title: {

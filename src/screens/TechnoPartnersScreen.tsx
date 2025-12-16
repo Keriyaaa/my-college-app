@@ -19,7 +19,7 @@ interface Partner {
   email?: string;
 }
 
-export default function CyberPartnersScreen({ navigation }: any) {
+export default function TechnoPartnersScreen({ navigation }: any) {
   const partners: Partner[] = [
     {
       id: '1',
@@ -247,6 +247,12 @@ export default function CyberPartnersScreen({ navigation }: any) {
         <View style={{ width: 20 }} />
       </View>
 
+      <View style={styles.techBadgeContainer}>
+        <View style={styles.techBadge}>
+          <Text style={styles.techBadgeText}>TECHNO PARTNERS</Text>
+        </View>
+      </View>
+
       <ScrollView 
         horizontal 
         showsHorizontalScrollIndicator={false}
@@ -296,7 +302,7 @@ export default function CyberPartnersScreen({ navigation }: any) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f8f9fa',
+    backgroundColor: '#F8FAFC',
   },
   header: {
     flexDirection: 'row',
@@ -305,55 +311,80 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingTop: 30,
     paddingBottom: 12,
-    backgroundColor: '#10B981',
+    backgroundColor: '#2563EB',
     borderBottomWidth: 1,
-    borderBottomColor: '#e9ecef',
+    borderBottomColor: '#E2E8F0',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
   },
   backButton: {
     padding: 4,
   },
   backButtonText: {
     fontSize: 18,
-    color: 'white', // Зеленый цвет
-    fontWeight: '500',
+    color: 'white',
+    fontWeight: '600',
   },
   title: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#333',
+    color: '#1E293B',
     textAlign: 'center',
+  },
+  techBadgeContainer: {
+    backgroundColor: 'white',
+    paddingVertical: 8,
+    alignItems: 'center',
+  },
+  techBadge: {
+    backgroundColor: '#2563EB',
+    paddingHorizontal: 20,
+    paddingVertical: 8,
+    borderRadius: 20,
+  },
+  techBadgeText: {
+    color: 'white',
+    fontSize: 14,
+    fontWeight: '700',
+    letterSpacing: 1,
   },
   categoriesContainer: {
     backgroundColor: 'white',
     borderBottomWidth: 1,
-    borderBottomColor: '#e9ecef',
-    maxHeight: 50,
+    borderBottomColor: '#E2E8F0',
+    maxHeight: 60,
   },
   categoriesContent: {
     paddingHorizontal: 12,
-    paddingVertical: 10,
+    paddingVertical: 12,
     alignItems: 'center',
-    gap: 6,
+    gap: 8,
   },
   categoryButton: {
-    paddingHorizontal: 14,
-    paddingVertical: 8,
+    paddingHorizontal: 16,
+    paddingVertical: 10,
     borderRadius: 20,
-    backgroundColor: '#f8f9fa',
-    minWidth: 100,
-    maxWidth: 140,
+    backgroundColor: '#F1F5F9',
+    minWidth: 110,
+    maxWidth: 150,
     alignItems: 'center',
     justifyContent: 'center',
+    borderWidth: 1,
+    borderColor: '#E2E8F0',
   },
   categoryButtonActive: {
-    backgroundColor: '#10B981', // Зеленый цвет
+    backgroundColor: '#2563EB',
+    borderColor: '#2563EB',
   },
   categoryButtonText: {
-    fontSize: 12,
-    color: '#666',
+    fontSize: 13,
+    color: '#475569',
     fontWeight: '500',
     textAlign: 'center',
-    lineHeight: 14,
+    lineHeight: 16,
   },
   categoryButtonTextActive: {
     color: 'white',
@@ -361,14 +392,14 @@ const styles = StyleSheet.create({
   },
   counter: {
     paddingHorizontal: 16,
-    paddingVertical: 10,
+    paddingVertical: 12,
     backgroundColor: 'white',
     borderBottomWidth: 1,
-    borderBottomColor: '#e9ecef',
+    borderBottomColor: '#E2E8F0',
   },
   counterText: {
     fontSize: 14,
-    color: '#666',
+    color: '#475569',
     fontWeight: '500',
   },
   partnersList: {
@@ -379,33 +410,35 @@ const styles = StyleSheet.create({
   },
   partnerCard: {
     backgroundColor: 'white',
-    borderRadius: 12,
-    padding: 16,
-    marginBottom: 12,
-    elevation: 2,
+    borderRadius: 16,
+    padding: 20,
+    marginBottom: 16,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.2,
-    shadowRadius: 1.41,
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.05,
+    shadowRadius: 6,
+    elevation: 2,
+    borderWidth: 1,
+    borderColor: '#F1F5F9',
   },
   partnerHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-start',
-    marginBottom: 8,
+    marginBottom: 12,
   },
   partnerName: {
     fontSize: 16,
-    fontWeight: 'bold',
-    color: '#333',
+    fontWeight: '700',
+    color: '#1E293B',
     flex: 1,
     marginRight: 8,
   },
   categoryBadge: {
-    paddingHorizontal: 8,
-    paddingVertical: 4,
+    paddingHorizontal: 10,
+    paddingVertical: 5,
     borderRadius: 12,
-    backgroundColor: '#10B981', // Зеленый цвет
+    backgroundColor: '#2563EB',
   },
   categoryText: {
     fontSize: 12,
@@ -414,25 +447,26 @@ const styles = StyleSheet.create({
   },
   partnerDescription: {
     fontSize: 14,
-    color: '#666',
+    color: '#475569',
     lineHeight: 20,
-    marginBottom: 12,
+    marginBottom: 16,
   },
   contacts: {
     flexDirection: 'row',
     flexWrap: 'wrap',
+    gap: 8,
   },
   contactButton: {
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    borderRadius: 16,
-    backgroundColor: '#f8f9fa',
-    marginRight: 8,
-    marginBottom: 8,
+    paddingHorizontal: 14,
+    paddingVertical: 8,
+    borderRadius: 20,
+    backgroundColor: '#F1F5F9',
+    borderWidth: 1,
+    borderColor: '#E2E8F0',
   },
   contactText: {
     fontSize: 12,
-    color: '#666',
+    color: '#475569',
     fontWeight: '500',
   },
 });

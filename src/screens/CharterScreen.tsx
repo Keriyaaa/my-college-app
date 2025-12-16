@@ -136,7 +136,7 @@ export default function CharterScreen({ navigation }: any) {
           style={styles.backButton}
           onPress={() => navigation.goBack()}
         >
-          <Text style={styles.backButtonText}>← Назад</Text>
+          <Text style={styles.backButtonText}>Назад</Text>
         </TouchableOpacity>
         <Text style={styles.title}>Устав колледжа</Text>
       </View>
@@ -222,7 +222,7 @@ const styles = StyleSheet.create({
   },
   backButtonText: {
     fontSize: 16,
-    color: '#FFA500',
+    color: '#FB923C', // Светло-оранжевый
     fontWeight: '500',
   },
   title: {
@@ -242,11 +242,13 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 1.41,
     alignItems: 'center',
+    borderWidth: 1,
+    borderColor: '#FDBA74', // Светло-оранжевая рамка
   },
   documentTitle: {
     fontSize: 16,
     fontWeight: 'bold',
-    color: '#333',
+    color: '#FB923C', // Светло-оранжевый
     textAlign: 'center',
     marginBottom: 12,
     lineHeight: 22,
@@ -261,7 +263,7 @@ const styles = StyleSheet.create({
   documentYear: {
     fontSize: 14,
     fontWeight: '600',
-    color: '#FFA500',
+    color: '#FB923C', // Светло-оранжевый
     textAlign: 'center',
     lineHeight: 20,
   },
@@ -279,29 +281,31 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 1.41,
     overflow: 'hidden',
+    borderWidth: 1,
+    borderColor: '#FED7AA', // Светло-оранжевая рамка
   },
   chapterHeader: {
     flexDirection: 'row',
     alignItems: 'center',
     padding: 16,
-    backgroundColor: '#f8f9fa',
+    backgroundColor: '#FFEDD5', // Очень светло-оранжевый фон
   },
   chapterNumber: {
     fontSize: 16,
     fontWeight: 'bold',
-    color: '#FFA500',
+    color: '#FB923C', // Светло-оранжевый
     marginRight: 8,
   },
   chapterTitle: {
     fontSize: 16,
     fontWeight: '600',
-    color: '#333',
+    color: '#C2410C', // Темно-оранжевый (для контраста)
     flex: 1,
   },
   expandIcon: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#FFA500',
+    color: '#FB923C', // Светло-оранжевый
     width: 20,
     textAlign: 'center',
   },
@@ -329,6 +333,8 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 1.41,
     alignItems: 'center',
+    borderWidth: 1,
+    borderColor: '#FED7AA', // Светло-оранжевая рамка
   },
   signatureText: {
     fontSize: 14,

@@ -549,9 +549,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 16,
-    paddingTop: 60,
+    paddingTop: 30,
     paddingBottom: 16,
-    backgroundColor: 'white',
+    backgroundColor: '#EA580C',
     borderBottomWidth: 1,
     borderBottomColor: '#e9ecef',
   },
@@ -589,6 +589,8 @@ const styles = StyleSheet.create({
   accountButton: {
     padding: 8,
     marginRight: 8,
+       backgroundColor: '#f8f9fa',
+       borderRadius: 20,
   },
   accountButtonText: {
     fontSize: 20,
@@ -599,7 +601,7 @@ const styles = StyleSheet.create({
   },
   dropdownButtonText: {
     fontSize: 20,
-    color: '#333',
+    color: 'white',
   },
   modalOverlay: {
     flex: 1,

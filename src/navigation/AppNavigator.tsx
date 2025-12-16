@@ -27,6 +27,15 @@ import DataHubCharterScreen from '../screens/DataHubCharterScreen';
 import CyberThesisSupervisorsScreen from '../screens/CyberThesisSupervisorsScreen';
 import CyberPartnersScreen from '../screens/CyberPartnersScreen';
 import CyberCharterScreen from '../screens/CyberCharterScreen';
+import MossovetThesisSupervisorsScreen from '../screens/MossovetThesisSupervisorsScreen';
+import MossovetPartnersScreen from '../screens/MossovetPartnersScreen';
+import MossovetCharterScreen from '../screens/MossovetCharterScreen';
+import TechnoThesisSupervisorsScreen from '../screens/TechnoThesisSupervisorsScreen';
+import TechnoPartnersScreen from '../screens/TechnoPartnersScreen';
+import TechoCharterScreen from '../screens/TechnoCharterScreen';
+import AutoThesisSupervisorsScreen from '../screens/AutoThesisSupervisorsScreen';
+import AutoPartnersScreen from '../screens/AutoPartnersScreen';
+import AutoCharterScreen from '../screens/AutoCharterScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -62,6 +71,29 @@ export default function AppNavigator() {
 <Stack.Screen name="CyberThesisSupervisors" component={CyberThesisSupervisorsScreen} />
 <Stack.Screen name="CyberPartners" component={CyberPartnersScreen} />
 <Stack.Screen name="CyberCharter" component={CyberCharterScreen} />
+<Stack.Screen name="MossovetThesisSupervisors" component={MossovetThesisSupervisorsScreen} />
+<Stack.Screen name="MossovetPartners" component={MossovetPartnersScreen} />        
+<Stack.Screen name="MossovetCharter" component={MossovetCharterScreen} options={{ headerShown: false }} />        
+<Stack.Screen name="TechnoThesisSupervisors" component={TechnoThesisSupervisorsScreen} options={{ title: 'Техно - Руководители', headerShown: false}} />        
+<Stack.Screen name="TechnoPartners" component={TechnoPartnersScreen} options={{ title: 'Партнеры Техно', headerShown: false }} />        
+<Stack.Screen name="TechnoCharter" component={TechoCharterScreen} options={{title: 'Устав колледжа',  headerShown: false}} />        
+<Stack.Screen name="AutoThesisSupervisors" component={AutoThesisSupervisorsScreen} options={{ title: 'Авто - Руководители', headerShown: false }} />        
+<Stack.Screen 
+  name="AutoPartners" 
+  component={AutoPartnersScreen} 
+  options={{ 
+    title: 'Авто - Партнеры', 
+    headerShown: false 
+  }} 
+/> 
+<Stack.Screen 
+  name="AutoCharter" 
+  component={AutoCharterScreen} 
+  options={{ 
+    title: 'Устав колледжа', 
+    headerShown: false 
+  }} 
+/>       
         <Stack.Screen 
           name="Home" 
           component={HomeScreen}

@@ -13,7 +13,7 @@ interface Chapter {
   content: string[];
 }
 
-export default function CyberCharterScreen({ navigation }: any) {
+export default function DataHubCharterScreen({ navigation }: any) {
   const [expandedChapter, setExpandedChapter] = useState<string | null>('1');
 
   const chapters: Chapter[] = [
@@ -148,7 +148,7 @@ export default function CyberCharterScreen({ navigation }: any) {
           style={styles.backButton}
           onPress={() => navigation.goBack()}
         >
-          <Text style={styles.backButtonText}>← Назад</Text>
+          <Text style={styles.backButtonText}>Назад</Text>
         </TouchableOpacity>
         <Text style={styles.title}>Устав колледжа</Text>
       </View>
@@ -222,11 +222,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 16,
-    paddingTop: 60,
+    paddingTop: 30,
     paddingBottom: 16,
-    backgroundColor: 'white',
+    backgroundColor: '#10B981', // Темно-зеленый фон шапки
     borderBottomWidth: 1,
-    borderBottomColor: '#e9ecef',
+    borderBottomColor: '#059669',
   },
   backButton: {
     padding: 8,
@@ -234,13 +234,13 @@ const styles = StyleSheet.create({
   },
   backButtonText: {
     fontSize: 16,
-    color: '#10B981', // Зеленый цвет для Cyber
+    color: '#FFFFFF', // Белый текст на зеленом фоне
     fontWeight: '500',
   },
   title: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#333',
+    color: '#FFFFFF', // Белый текст на зеленом фоне
     flex: 1,
   },
   documentHeader: {
@@ -254,11 +254,13 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 1.41,
     alignItems: 'center',
+    borderWidth: 1,
+    borderColor: '#10B981', // Зеленая рамка
   },
   documentTitle: {
     fontSize: 16,
     fontWeight: 'bold',
-    color: '#333',
+    color: '#10B981', // Зеленый цвет
     textAlign: 'center',
     marginBottom: 12,
     lineHeight: 22,
@@ -273,7 +275,7 @@ const styles = StyleSheet.create({
   documentYear: {
     fontSize: 14,
     fontWeight: '600',
-    color: '#10B981', // Зеленый цвет для Cyber
+    color: '#10B981', // Зеленый цвет
     textAlign: 'center',
     lineHeight: 20,
   },
@@ -291,29 +293,31 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 1.41,
     overflow: 'hidden',
+    borderWidth: 1,
+    borderColor: '#D1FAE5', // Светло-зеленая рамка
   },
   chapterHeader: {
     flexDirection: 'row',
     alignItems: 'center',
     padding: 16,
-    backgroundColor: '#f8f9fa',
+    backgroundColor: '#F0FDF4', // Очень светло-зеленый фон
   },
   chapterNumber: {
     fontSize: 16,
     fontWeight: 'bold',
-    color: '#10B981', // Зеленый цвет для Cyber
+    color: '#10B981', // Зеленый цвет
     marginRight: 8,
   },
   chapterTitle: {
     fontSize: 16,
     fontWeight: '600',
-    color: '#333',
+    color: '#059669', // Темно-зеленый цвет
     flex: 1,
   },
   expandIcon: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#10B981', // Зеленый цвет для Cyber
+    color: '#10B981', // Зеленый цвет
     width: 20,
     textAlign: 'center',
   },
@@ -341,6 +345,8 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 1.41,
     alignItems: 'center',
+    borderWidth: 1,
+    borderColor: '#D1FAE5', // Светло-зеленая рамка
   },
   signatureText: {
     fontSize: 14,

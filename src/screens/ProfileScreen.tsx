@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -6,9 +6,56 @@ import {
   StyleSheet,
   TouchableOpacity,
   ScrollView,
+  Switch,
 } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useUser } from '../context/UserContext';
 
 export default function ProfileScreen({ navigation }: any) {
+  const { userEmail, userName } = useUser();
+  const [notificationsEnabled, setNotificationsEnabled] = useState(true);
+
+  // Загружаем состояние уведомлений при монтировании
+  useEffect(() => {
+    loadNotificationSettings();
+  }, []);
+
+  const loadNotificationSettings = async () => {
+    try {
+      const savedSettings = await AsyncStorage.getItem('notification_settings');
+      if (savedSettings !== null) {
+        const settings = JSON.parse(savedSettings);
+        setNotificationsEnabled(settings.enabled);
+      }
+    } catch (error) {
+      console.error('Error loading notification settings:', error);
+    }
+  };
+
+  const saveNotificationSettings = async (enabled: boolean) => {
+    try {
+      const settings = { enabled };
+      await AsyncStorage.setItem('notification_settings', JSON.stringify(settings));
+    } catch (error) {
+      console.error('Error saving notification settings:', error);
+    }
+  };
+
+  const toggleNotifications = () => {
+    const newValue = !notificationsEnabled;
+    setNotificationsEnabled(newValue);
+    saveNotificationSettings(newValue);
+  };
+
+  // Если userName не задан, используем часть до @ из email
+  const displayName = userName || (userEmail ? userEmail.split('@')[0] : 'Иван Иванов');
+  const displayEmail = userEmail || 'student@edu.kait20.ru';
+
+  // Форматируем имя: первую букву заглавной
+  const formattedName = displayName 
+    ? displayName.charAt(0).toUpperCase() + displayName.slice(1)
+    : 'Иван Иванов';
+
   return (
     <ScrollView style={styles.container}>
       {/* Шапка профиля */}
@@ -29,8 +76,8 @@ export default function ProfileScreen({ navigation }: any) {
           style={styles.avatar}
           resizeMode="contain"
         />
-        <Text style={styles.userName}>Иван Иванов</Text>
-        <Text style={styles.userEmail}>student@edu.kait20.ru</Text>
+        <Text style={styles.userName}>{formattedName}</Text>
+        <Text style={styles.userEmail}>{displayEmail}</Text>
         <Text style={styles.userDepartment}>УО: Дидижитал</Text>
       </View>
 
@@ -62,10 +109,18 @@ export default function ProfileScreen({ navigation }: any) {
           <Text style={styles.menuArrow}>›</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.menuItem}>
+        {/* Уведомления с тумблером */}
+        <View style={styles.menuItemWithToggle}>
           <Text style={styles.menuText}>Уведомления</Text>
-          <Text style={styles.menuArrow}>›</Text>
-        </TouchableOpacity>
+          <Switch
+            value={notificationsEnabled}
+            onValueChange={toggleNotifications}
+            trackColor={{ false: '#D1D5DB', true: '#8B5CF6' }}
+            thumbColor={notificationsEnabled ? '#FFFFFF' : '#FFFFFF'}
+            ios_backgroundColor="#D1D5DB"
+            style={styles.toggleSwitch}
+          />
+        </View>
 
         <TouchableOpacity style={styles.menuItem}>
           <Text style={styles.menuText}>Безопасность</Text>
@@ -79,7 +134,13 @@ export default function ProfileScreen({ navigation }: any) {
       </View>
 
       {/* Кнопка выхода */}
-      <TouchableOpacity style={styles.logoutButton}>
+      <TouchableOpacity 
+        style={styles.logoutButton}
+        onPress={() => {
+          // Здесь можно добавить логику выхода
+          navigation.replace('Login');
+        }}
+      >
         <Text style={styles.logoutButtonText}>Выйти из аккаунта</Text>
       </TouchableOpacity>
     </ScrollView>
@@ -95,17 +156,18 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 20,
-    paddingTop: 60,
+    paddingTop: 30,
     paddingBottom: 20,
     borderBottomWidth: 1,
     borderBottomColor: '#F0F0F0',
+    backgroundColor: '#8B5CF6',
   },
   backButton: {
     padding: 8,
   },
   backButtonText: {
     fontSize: 16,
-    color: '#8B5CF6',
+    color: 'white',
     fontWeight: '500',
   },
   title: {
@@ -181,6 +243,14 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#F5F5F5',
   },
+  menuItemWithToggle: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingVertical: 16,
+    borderBottomWidth: 1,
+    borderBottomColor: '#F5F5F5',
+  },
   menuText: {
     fontSize: 16,
     color: '#333',
@@ -188,6 +258,9 @@ const styles = StyleSheet.create({
   menuArrow: {
     fontSize: 18,
     color: '#999',
+  },
+  toggleSwitch: {
+    transform: [{ scaleX: 0.8 }, { scaleY: 0.8 }],
   },
   logoutButton: {
     margin: 20,
@@ -201,4 +274,4 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     color: '#EF4444',
   },
-}); 
+});
