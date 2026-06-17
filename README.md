@@ -1,97 +1,99 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# MyCollegeApp
 
-# Getting Started
+Это новый проект на **React Native**, созданный с помощью [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## Начало работы
 
-## Step 1: Start Metro
+Важно: Убедитесь, что вы выполнили все шаги из руководства [Настройка окружения](https://reactnative.dev/docs/set-up-your-environment), прежде чем продолжить.
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## Шаг 1: Запуск Metro
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+Сначала необходимо запустить **Metro** — инструмент сборки JavaScript для React Native.
+
+Чтобы запустить сервер разработки Metro, выполните следующую команду из корневой папки вашего проекта:
 
 ```sh
-# Using npm
+# Используя npm
 npm start
 
-# OR using Yarn
+# Или используя Yarn
 yarn start
 ```
 
-## Step 2: Build and run your app
+## Шаг 2: Сборка и запуск приложения
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+Когда Metro запущен, откройте новое окно терминала из корневой папки проекта и выполните одну из команд ниже, чтобы собрать и запустить приложение на Android или iOS.
 
 ### Android
 
 ```sh
-# Using npm
+# Используя npm
 npm run android
 
-# OR using Yarn
+# Или используя Yarn
 yarn android
 ```
 
 ### iOS
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+Для iOS не забудьте установить зависимости CocoaPods (это нужно сделать только при первом клонировании или после обновления нативных зависимостей).
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+При первом создании нового проекта выполните установку самого CocoaPods через Ruby bundler:
 
 ```sh
 bundle install
 ```
 
-Then, and every time you update your native dependencies, run:
+Затем, а также каждый раз после обновления нативных зависимостей, выполните:
 
 ```sh
 bundle exec pod install
 ```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+Подробнее читайте в руководстве [CocoaPods Getting Started](https://guides.cocoapods.org/using/getting-started.html).
 
 ```sh
-# Using npm
+# Используя npm
 npm run ios
 
-# OR using Yarn
+# Или используя Yarn
 yarn ios
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+Если всё настроено правильно, вы увидите новое приложение, запущенное в эмуляторе Android, симуляторе iOS или на подключённом физическом устройстве.
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+Это один из способов запуска приложения. Вы также можете собрать его напрямую через Android Studio или Xcode.
 
-## Step 3: Modify your app
+## Шаг 3: Внесение изменений в приложение
 
-Now that you have successfully run the app, let's make changes!
+Теперь, когда вы успешно запустили приложение, давайте внесём изменения.
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+Откройте файл `App.tsx` в любом текстовом редакторе и внесите правки. После сохранения приложение автоматически обновится и отобразит изменения — это работает благодаря механизму [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+Если вам нужно принудительно перезагрузить приложение, например, чтобы сбросить состояние, выполните полную перезагрузку:
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+- **Android**: Нажмите клавишу R дважды или выберите **"Reload"** в **Dev Menu**, которое вызывается сочетанием Ctrl + M (Windows/Linux) или Cmd + M (macOS).
+- **iOS**: Нажмите R в симуляторе iOS.
 
-## Congratulations! :tada:
+## Поздравляем
 
-You've successfully run and modified your React Native App. :partying_face:
+Вы успешно запустили и изменили своё React Native приложение.
 
-### Now what?
+### Что дальше
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+- Если вы хотите добавить этот код React Native в существующее приложение, ознакомьтесь с [руководством по интеграции](https://reactnative.dev/docs/integration-with-existing-apps).
+- Если вы хотите узнать больше о React Native, изучите [документацию](https://reactnative.dev/docs/getting-started).
 
-# Troubleshooting
+## Устранение неполадок
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+Если у вас возникли проблемы с выполнением шагов выше, обратитесь к странице [Устранение неполадок](https://reactnative.dev/docs/troubleshooting).
 
-# Learn More
+## Дополнительные ресурсы
 
-To learn more about React Native, take a look at the following resources:
+Чтобы узнать больше о React Native, посмотрите следующие ресурсы:
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+- [Веб-сайт React Native](https://reactnative.dev) — основная информация о React Native.
+- [Начало работы](https://reactnative.dev/docs/environment-setup) — обзор React Native и настройка окружения.
+- [Изучение основ](https://reactnative.dev/docs/getting-started) — экскурсия по основам React Native.
+- [Блог](https://reactnative.dev/blog) — последние официальные новости React Native.
+- [`@facebook/react-native`](https://github.com/facebook/react-native) — открытый репозиторий React Native на GitHub.
